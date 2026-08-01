@@ -1,0 +1,15 @@
+# build artifacts
+*.o
+*.so
+*.out
+a.out
+build/
+cuda_build/
+torch_extensions/
+# python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+# outputs & os
+output*.png
+.DS_Store
