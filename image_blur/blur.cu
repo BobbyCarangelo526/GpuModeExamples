@@ -41,7 +41,7 @@ torch::Tensor blur_image(torch::Tensor image, int radius) {
 
     dim3 threads(16, 16);
     dim3 blocks(cdiv(width, threads.x), cdiv(height, threads.y));
-    blur_kernel<<<blocks, threads, 0, torch::cuda::getCurrentCUDAStream()>>>(
+    blur_kernel<<<blocks, threads, 0, c10::cuda::getCurrentCUDAStream()>>>(
         result.data_ptr<unsigned char>(),
         image.data_ptr<unsigned char>(),
         width, height, radius);
